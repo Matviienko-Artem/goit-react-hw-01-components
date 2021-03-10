@@ -1,15 +1,29 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styles from './Statistics.module.css';
+
+function get_random_color() {
+  var color = '';
+  for (var i = 0; i < 3; i++) {
+    var sub = Math.floor(Math.random() * 256).toString(16);
+    color += sub.length === 1 ? '0' + sub : sub;
+  }
+  return '#' + color;
+}
 
 const Statistics = ({ title, stats }) => (
-  <section className="statistics">
-    {title && <h2 className="title">{title}</h2>}
+  <section className={styles.statistics}>
+    {title && <h2 className={styles.title}>{title}</h2>}
 
-    <ul className="stat-list">
+    <ul className={styles.stat_list}>
       {stats.map(({ id, label, percentage }) => (
-        <li key={id} className="item">
-          <span className="label">{label}</span>
-          <span className="percentage">{percentage}%</span>
+        <li
+          key={id}
+          style={{ backgroundColor: `${get_random_color()}` }}
+          className={styles.item}
+        >
+          <span className={styles.label}>{label}</span>
+          <span className={styles.percentage}>{percentage}%</span>
         </li>
       ))}
     </ul>
@@ -23,7 +37,7 @@ Statistics.propTypes = {
       id: PropTypes.string.isRequired,
       label: PropTypes.string.isRequired,
       percentage: PropTypes.number.isRequired,
-    })
+    }),
   ).isRequired,
 };
 

@@ -1,0 +1,19 @@
+.transaction_history {
+  width: 500px;
+  text-align: center;
+  border: 1px solid black;
+}
+
+.transaction_header {
+  height: 50px;
+  color: white;
+  background-color: rgb(22, 190, 202);
+}
+
+.transaction_item {
+  height: 50px;
+}
+
+.transaction_item:nth-child(2n) {
+  background-color: #e9e1e1;
+}
