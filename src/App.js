@@ -1,12 +1,12 @@
-import React from "react";
-import Profile from "./components/Profile/Profile";
-import Statistics from "./components/Statistics/Statistics";
-import FriendsList from "./components/FriendList/FriendList";
-import TransactionHistory from "./components/TransactionHistory/TransactionHistory";
-import user from "./components/Profile/user.json";
-import statisticalData from "./components/Statistics/statistical-data.json";
-import friendsData from "./components/FriendList/friends.json";
-import transactions from "./components/TransactionHistory/transactions.json";
+import React from 'react';
+import Profile from './components/Profile/Profile';
+import Statistics from './components/Statistics/Statistics';
+import FriendsList from './components/FriendList/FriendList';
+import TransactionHistory from './components/TransactionHistory/TransactionHistory';
+import user from './components/Profile/data/user.json';
+import statisticalData from './components/Statistics/statistical-data.json';
+import friendsData from './components/FriendList/data/friends.json';
+import transactions from './components/TransactionHistory/transactions.json';
 
 const App = () => {
   return (
@@ -17,9 +17,7 @@ const App = () => {
         tag={user.tag}
         location={user.location}
         avatar={user.avatar}
-        followers={user.stats.followers}
-        views={user.stats.views}
-        likes={user.stats.likes}
+        stats={user.stats}
       />
       <h2>Секция статистики</h2>
       <Statistics title="Upload stats" stats={statisticalData} />

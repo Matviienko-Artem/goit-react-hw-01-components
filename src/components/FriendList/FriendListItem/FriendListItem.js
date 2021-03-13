@@ -1,9 +1,6 @@
 import React from 'react';
-import style from './FriendList.module.css';
-
-const styleIsOnline = {
-  backgroundColor: `#9acd32`,
-};
+import style from '../FriendList.module.css';
+import defaultImage from '../data/default-image.jpg';
 
 const FriendListItem = ({ avatar, name, isOnline, id }) => (
   <li key={id} className={style.item}>
@@ -23,5 +20,9 @@ const FriendListItem = ({ avatar, name, isOnline, id }) => (
     <p className={style.name}>{name}</p>
   </li>
 );
+
+FriendListItem.defaultProps = {
+  avatar: defaultImage,
+};
 
 export default FriendListItem;
